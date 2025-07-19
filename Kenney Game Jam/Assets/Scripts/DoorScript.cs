@@ -1,13 +1,19 @@
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
+using System.Collections;
 
 public class DoorScript : MonoBehaviour
 {
     public dodir_sa_igracem touch;
     public GameObject door;
     public GameObject doorSet;
+    public TextMeshProUGUI needKey;
+    public TextMeshProUGUI hasKey;
+
+    private bool unlockedDoor = false;
 
     private bool canTeleport = true;
-    private float teleportCooldown = 0.5f; // Half a second
+    private float teleportCooldown = 0.5f;
     private float lastTeleportTime = -999f;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,7 +21,6 @@ public class DoorScript : MonoBehaviour
         if (!canTeleport || Time.time - lastTeleportTime < teleportCooldown)
             return;
 
-        // Player touches entrance door
         if (collision.gameObject == door)
         {
             if (touch.pickupKey)
@@ -24,14 +29,18 @@ public class DoorScript : MonoBehaviour
                 canTeleport = false;
                 lastTeleportTime = Time.time;
                 Debug.Log("Teleported to doorSet");
+                if (!unlockedDoor)
+                {
+                    ShowHasKeyMessage();
+                    unlockedDoor = true;
+                }
             }
             else
             {
                 Debug.Log("Door is locked");
+                ShowNeedKeyMessage();
             }
         }
-
-        // Player touches destination door
         else if (collision.gameObject == doorSet)
         {
             Vector3 offset = new Vector3(0, -1f, 0);
@@ -44,10 +53,83 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
-        // Re-enable teleport after cooldown
         if (!canTeleport && Time.time - lastTeleportTime >= teleportCooldown)
         {
             canTeleport = true;
         }
+    }
+
+    private void ShowNeedKeyMessage()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInAndOutTMP());
+    }
+
+    private void ShowHasKeyMessage()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInAndOutTMP2());
+    }
+
+    private IEnumerator FadeInAndOutTMP()
+    {
+        Color originalColor = needKey.color;
+
+        // Fade in
+        float fadeInTime = 0.5f;
+        float t = 0f;
+        while (t < fadeInTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, t / fadeInTime);
+            needKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+
+        // Hold
+        yield return new WaitForSeconds(2f);
+
+        // Fade out
+        float fadeOutTime = 1f;
+        t = 0f;
+        while (t < fadeOutTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, t / fadeOutTime);
+            needKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        needKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+    }
+
+    private IEnumerator FadeInAndOutTMP2()
+    {
+        Color originalColor = hasKey.color;
+
+        // Fade in
+        float fadeInTime = 0.5f;
+        float t = 0f;
+        while (t < fadeInTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, t / fadeInTime);
+            hasKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+
+        // Hold
+        yield return new WaitForSeconds(2f);
+
+        // Fade out
+        float fadeOutTime = 1f;
+        t = 0f;
+        while (t < fadeOutTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, t / fadeOutTime);
+            hasKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        hasKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
     }
 }

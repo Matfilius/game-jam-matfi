@@ -5,12 +5,16 @@ using System.Collections;
 public class DoorScript : MonoBehaviour
 {
     public dodir_sa_igracem touch;
+    public KeyPad pad;
     public GameObject door;
     public GameObject doorSet;
+    public GameObject door1;
+    public GameObject doorSet1;
     public TextMeshProUGUI needKey;
     public TextMeshProUGUI hasKey;
 
     private bool unlockedDoor = false;
+    private bool unlockedDoor1 = false;
 
     private bool canTeleport = true;
     private float teleportCooldown = 0.5f;
@@ -29,10 +33,10 @@ public class DoorScript : MonoBehaviour
                 canTeleport = false;
                 lastTeleportTime = Time.time;
                 Debug.Log("Teleported to doorSet");
-                if (!unlockedDoor)
+                if (!unlockedDoor1)
                 {
                     ShowHasKeyMessage();
-                    unlockedDoor = true;
+                    unlockedDoor1 = true;
                 }
             }
             else
@@ -45,6 +49,35 @@ public class DoorScript : MonoBehaviour
         {
             Vector3 offset = new Vector3(0, -1f, 0);
             transform.position = door.transform.position + offset;
+            canTeleport = false;
+            lastTeleportTime = Time.time;
+            Debug.Log("Teleported back to door");
+        }
+        else if (collision.gameObject == door1)
+        {
+            Debug.Log("Ajmo momci");
+            if (pad.canEnter)
+            {
+                transform.position = doorSet1.transform.position;
+                canTeleport = false;
+                lastTeleportTime = Time.time;
+                Debug.Log("Teleported to doorSet");
+                if (!unlockedDoor)
+                {
+                    ShowHasKeyMessage();
+                    unlockedDoor = true;
+                }
+            }
+            else
+            {
+                Debug.Log("Door is locked");
+                ShowNeedKeyMessage();
+            }
+        }
+        else if (collision.gameObject == doorSet1)
+        {
+            Vector3 offset = new Vector3(0, -1f, 0);
+            transform.position = door1.transform.position + offset;
             canTeleport = false;
             lastTeleportTime = Time.time;
             Debug.Log("Teleported back to door");

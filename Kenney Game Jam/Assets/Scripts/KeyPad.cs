@@ -18,6 +18,7 @@ public class KeyPad : MonoBehaviour
     public GameObject button0;
     public GameObject clearButton;
     public GameObject enterButton;
+    public bool canEnter = false;
 
     public void b1()
     {
@@ -80,6 +81,7 @@ public class KeyPad : MonoBehaviour
         if(charHolder.text == "5936")
         {
             Debug.Log("Success");
+            canEnter = true;
         }
         else
         {

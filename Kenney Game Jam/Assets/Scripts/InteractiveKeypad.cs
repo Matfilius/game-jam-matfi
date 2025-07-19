@@ -8,9 +8,9 @@ public class DoorTrigger : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !key.canEnter)
         {
-            if (!canvas.activeSelf && !key.canEnter)
+            if (!canvas.activeSelf)
             {
                 canvas.SetActive(true);
                 Time.timeScale = 0f;

@@ -19,6 +19,7 @@ public class KeyPad : MonoBehaviour
     public GameObject clearButton;
     public GameObject enterButton;
     public bool canEnter = false;
+    public DoorTrigger dt;
 
     public void b1()
     {
@@ -82,11 +83,23 @@ public class KeyPad : MonoBehaviour
         {
             Debug.Log("Success");
             canEnter = true;
+            charHolder.text = null;
+            charHolder.text = charHolder.text + "Success";
+            dt.canvas.SetActive(false);
+            Time.timeScale = 1f;
         }
         else
         {
             Debug.Log("Failure");
+            charHolder.text = null;
+            charHolder.text = charHolder.text + "Fail";
+            ShowFailMessage();
+            charHolder.text = null;
         }
     }
 
+    private IEnumerator ShowFailMessage()
+    {
+        yield return new WaitForSeconds(1f);
+    }
 }

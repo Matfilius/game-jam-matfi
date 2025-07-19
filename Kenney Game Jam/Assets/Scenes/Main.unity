@@ -617,18 +617,12 @@ GameObject:
   - component: {fileID: 974296182}
   - component: {fileID: 974296183}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   - component: {fileID: 974296184}
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
 =======
   - component: {fileID: 974296184}
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Player
@@ -796,12 +790,6 @@ MonoBehaviour:
   moveSpeed: 3
   rb: {fileID: 974296178}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
---- !u!114 &974296183
-=======
->>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
 --- !u!114 &974296183
@@ -831,10 +819,6 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &974296184
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
->>>>>>> Stashed changes
 =======
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
 >>>>>>> Stashed changes
@@ -847,10 +831,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -1082,9 +1063,6 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -1196,10 +1174,6 @@ Transform:
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
->>>>>>> Stashed changes
 =======
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
 >>>>>>> Stashed changes

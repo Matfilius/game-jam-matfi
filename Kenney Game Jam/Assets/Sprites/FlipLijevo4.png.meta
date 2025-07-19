@@ -1,18 +1,12 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 guid: cd4eeda84f7375a4db4dd29fc49df924
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
 guid: 7804ba7d797cd8845be6faa1dbdda8ed
 =======
 guid: cd4eeda84f7375a4db4dd29fc49df924
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable:
@@ -66,19 +60,13 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   spritePixelsToUnits: 128
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
   spritePixelsToUnits: 100
 =======
   spritePixelsToUnits: 128
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -147,12 +135,9 @@ TextureImporter:
         x: 0
         y: 0
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
         width: 140
         height: 175
 =======
-=======
->>>>>>> Stashed changes
 <<<<<<< HEAD
         width: 133
         height: 164
@@ -160,9 +145,6 @@ TextureImporter:
         width: 140
         height: 175
 >>>>>>> 51de3e78a54dcc945b7e6854c426e4125dd1cd37
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
       alignment: 0
       pivot: {x: 0, y: 0}

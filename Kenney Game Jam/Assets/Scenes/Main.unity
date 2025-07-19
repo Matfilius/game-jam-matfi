@@ -800,14 +800,6 @@ MonoBehaviour:
 =======
 <<<<<<< HEAD
 --- !u!114 &974296183
-=======
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
---- !u!114 &974296183
-=======
->>>>>>> Stashed changes
---- !u!95 &974296183
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

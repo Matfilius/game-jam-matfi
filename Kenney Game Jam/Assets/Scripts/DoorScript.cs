@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public dodir_sa_igracem touch;
+    public GameObject Player;
+    public GameObject doorSet;
     void Start()
     {
         
@@ -12,5 +14,20 @@ public class DoorScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            if (touch.pickupKey)
+            {
+                
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -2878,7 +2878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 34373674}
-  time: 420
+  time: 540
   panel: {fileID: 1762776723}
 --- !u!1 &555911351
 GameObject:
@@ -6602,7 +6602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41221f134dcbe0245ad4dcd554f5ff14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.5
+  moveSpeed: 4
   rb: {fileID: 974296178}
 --- !u!95 &974296183
 Animator:

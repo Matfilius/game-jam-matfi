@@ -10,7 +10,11 @@ public class Generator : MonoBehaviour
     public GameObject cell3;
     public CoroutineManager manager;
     public bool levelPassed;
+    private bool cell1Done;
+    private bool cell2Done;
+    private bool cell3Done;
     public AudioManager audioManager;
+    public Bar barScript;
 
     public void AddPowerCell()
     {
@@ -25,22 +29,34 @@ public class Generator : MonoBehaviour
         {
             if(powerCellCount == 1)
             {
-                cell1.SetActive(true);
-                audioManager.PlaySFX(audioManager.wire);
+                if (!cell1Done)
+                {
+                    cell1.SetActive(true);
+                    audioManager.PlaySFX(audioManager.wire);
+                    cell1Done = true;
+                }
             }
             else if (powerCellCount == 2)
             {
-                cell1.SetActive(true);
-                cell2.SetActive(true);
-                audioManager.PlaySFX(audioManager.wire);
+                if (!cell2Done)
+                {
+                    cell1.SetActive(true);
+                    cell2.SetActive(true);
+                    audioManager.PlaySFX(audioManager.wire);
+                    cell2Done = true;
+                }
             }
             else if (powerCellCount == 3)
             {
-                cell1.SetActive(true);
-                cell2.SetActive(true);
-                cell3.SetActive(true);
-                audioManager.PlaySFX(audioManager.wire);
-                levelPassed = true;
+                if(!cell3Done)
+                {
+                    cell1.SetActive(true);
+                    cell2.SetActive(true);
+                    cell3.SetActive(true);
+                    audioManager.PlaySFX(audioManager.wire);
+                    cell3Done = true;
+                    levelPassed = true;
+                }
             }
         }
     }

@@ -6,15 +6,19 @@ public class DoorScript : MonoBehaviour
 {
     public dodir_sa_igracem touch;
     public KeyPad pad;
+    public dodir_sa_igracem2 karta;
     public GameObject door;
     public GameObject doorSet;
     public GameObject door1;
     public GameObject doorSet1;
+    public GameObject door2;
+    public GameObject doorSet2;
     public TextMeshProUGUI needKey;
     public TextMeshProUGUI hasKey;
 
     private bool unlockedDoor = false;
     private bool unlockedDoor1 = false;
+    private bool unlockedDoor2 = false;
 
     private bool canTeleport = true;
     private float teleportCooldown = 0.5f;
@@ -62,10 +66,10 @@ public class DoorScript : MonoBehaviour
                 canTeleport = false;
                 lastTeleportTime = Time.time;
                 Debug.Log("Teleported to doorSet");
-                if (!unlockedDoor)
+                if (!unlockedDoor1)
                 {
                     ShowHasKeyMessage();
-                    unlockedDoor = true;
+                    unlockedDoor1 = true;
                 }
             }
             else
@@ -78,6 +82,35 @@ public class DoorScript : MonoBehaviour
         {
             Vector3 offset = new Vector3(0, -1f, 0);
             transform.position = door1.transform.position + offset;
+            canTeleport = false;
+            lastTeleportTime = Time.time;
+            Debug.Log("Teleported back to door");
+        }
+        else if (collision.gameObject == door2)
+        {
+            Debug.Log("Ajmo momci");
+            if (karta.pickupCard)
+            {
+                transform.position = doorSet2.transform.position;
+                canTeleport = false;
+                lastTeleportTime = Time.time;
+                Debug.Log("Teleported to doorSet");
+                if (!unlockedDoor2)
+                {
+                    ShowHasKeyMessage();
+                    unlockedDoor2 = true;
+                }
+            }
+            else
+            {
+                Debug.Log("Door is locked");
+                ShowNeedKeyMessage();
+            }
+        }
+        else if (collision.gameObject == doorSet2)
+        {
+            Vector3 offset = new Vector3(0, -1f, 0);
+            transform.position = door2.transform.position + offset;
             canTeleport = false;
             lastTeleportTime = Time.time;
             Debug.Log("Teleported back to door");

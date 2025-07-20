@@ -37,10 +37,10 @@ public class DoorScript : MonoBehaviour
                 canTeleport = false;
                 lastTeleportTime = Time.time;
                 Debug.Log("Teleported to doorSet");
-                if (!unlockedDoor1)
+                if (!unlockedDoor)
                 {
                     ShowHasKeyMessage();
-                    unlockedDoor1 = true;
+                    unlockedDoor = true;
                 }
             }
             else

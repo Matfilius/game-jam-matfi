@@ -10,9 +10,11 @@ public class Generator : MonoBehaviour
     public GameObject cell3;
     public CoroutineManager manager;
     public bool levelPassed;
+    public AudioManager audioManager;
 
     public void AddPowerCell()
     {
+        audioManager.PlaySFX(audioManager.itempickup);
         powerCellCount++;
         manager.ShowPickupCellMessage();
     }
@@ -24,17 +26,20 @@ public class Generator : MonoBehaviour
             if(powerCellCount == 1)
             {
                 cell1.SetActive(true);
+                audioManager.PlaySFX(audioManager.wire);
             }
             else if (powerCellCount == 2)
             {
                 cell1.SetActive(true);
                 cell2.SetActive(true);
+                audioManager.PlaySFX(audioManager.wire);
             }
             else if (powerCellCount == 3)
             {
                 cell1.SetActive(true);
                 cell2.SetActive(true);
                 cell3.SetActive(true);
+                audioManager.PlaySFX(audioManager.wire);
                 levelPassed = true;
             }
         }

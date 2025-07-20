@@ -15,6 +15,7 @@ public class DoorScript : MonoBehaviour
     public GameObject doorSet2;
     public TextMeshProUGUI needKey;
     public TextMeshProUGUI hasKey;
+    public AudioManager audioManager;
 
     private bool unlockedDoor = false;
     private bool unlockedDoor1 = false;
@@ -33,6 +34,7 @@ public class DoorScript : MonoBehaviour
         {
             if (touch.pickupKey)
             {
+                audioManager.PlaySFX(audioManager.door);
                 transform.position = doorSet.transform.position;
                 canTeleport = false;
                 lastTeleportTime = Time.time;
@@ -51,6 +53,7 @@ public class DoorScript : MonoBehaviour
         }
         else if (collision.gameObject == doorSet)
         {
+            audioManager.PlaySFX(audioManager.door);
             Vector3 offset = new Vector3(0, -1f, 0);
             transform.position = door.transform.position + offset;
             canTeleport = false;
@@ -62,6 +65,7 @@ public class DoorScript : MonoBehaviour
             Debug.Log("Ajmo momci");
             if (pad.canEnter)
             {
+                audioManager.PlaySFX(audioManager.door);
                 transform.position = doorSet1.transform.position;
                 canTeleport = false;
                 lastTeleportTime = Time.time;
@@ -80,6 +84,7 @@ public class DoorScript : MonoBehaviour
         }
         else if (collision.gameObject == doorSet1)
         {
+            audioManager.PlaySFX(audioManager.door);
             Vector3 offset = new Vector3(0, -1f, 0);
             transform.position = door1.transform.position + offset;
             canTeleport = false;
@@ -91,6 +96,7 @@ public class DoorScript : MonoBehaviour
             Debug.Log("Ajmo momci");
             if (karta.pickupCard)
             {
+                audioManager.PlaySFX(audioManager.door);
                 transform.position = doorSet2.transform.position;
                 canTeleport = false;
                 lastTeleportTime = Time.time;
@@ -109,6 +115,7 @@ public class DoorScript : MonoBehaviour
         }
         else if (collision.gameObject == doorSet2)
         {
+            audioManager.PlaySFX(audioManager.door);
             Vector3 offset = new Vector3(0, -1f, 0);
             transform.position = door2.transform.position + offset;
             canTeleport = false;

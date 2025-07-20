@@ -10,6 +10,7 @@ public class CoroutineManager : MonoBehaviour
     public dodir_sa_igracem2 kartica;
     public TextMeshProUGUI keyPickup;
     public TextMeshProUGUI cardPickup;
+    public TextMeshProUGUI cellPickup;
     private bool keyShowed = false;
     private bool cardShowed = false;
 
@@ -100,5 +101,42 @@ public class CoroutineManager : MonoBehaviour
             yield return null;
         }
         cardPickup.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+    }
+
+    public void ShowPickupCellMessage()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeInAndOutTMP2());
+    }
+
+    private IEnumerator FadeInAndOutTMP2()
+    {
+        Color originalColor = cellPickup.color;
+
+        // Fade in
+        float fadeInTime = 0.5f;
+        float t = 0f;
+        while (t < fadeInTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, t / fadeInTime);
+            cellPickup.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+
+        // Hold
+        yield return new WaitForSeconds(2f);
+
+        // Fade out
+        float fadeOutTime = 1f;
+        t = 0f;
+        while (t < fadeOutTime)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, t / fadeOutTime);
+            cellPickup.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        cellPickup.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
     }
 }

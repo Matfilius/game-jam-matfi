@@ -1,14 +1,17 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class Generator : MonoBehaviour
 {
     public int powerCellCount = 0;
-    public TextMeshProUGUI cellPickup;
+    public CoroutineManager manager;
 
     public void AddPowerCell()
     {
-        Debug.Log("dodano");
         powerCellCount++;
+        manager.ShowPickupCellMessage();
     }
+
+    
 }

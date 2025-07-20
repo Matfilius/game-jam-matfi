@@ -12,6 +12,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip generator;
     public AudioClip itempickup;
     public AudioClip wire;
+    public AudioClip success;
+    public AudioClip victoryalt;
+    public AudioClip generatornovi;
+    public AudioClip enternumber;
+    public AudioClip back;
+    public AudioClip victory;
 
     private void Start()
     {

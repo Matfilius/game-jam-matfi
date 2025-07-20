@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class KeyPad : MonoBehaviour
 {
@@ -79,23 +80,71 @@ public class KeyPad : MonoBehaviour
 
     public void enterEvent()
     {
-        if(charHolder.text == "5936")
-        {
-            Debug.Log("Success");
-            canEnter = true;
-            charHolder.text = null;
-            charHolder.text = charHolder.text + "Success";
-            dt.canvas.SetActive(false);
-            Time.timeScale = 1f;
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        string sceneName = currentScene.name;
+
+        int sceneIndex = currentScene.buildIndex;
+        if (sceneIndex == 1){
+            if (charHolder.text == "5936")
+            {
+                Debug.Log("Success");
+                canEnter = true;
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Success";
+                dt.canvas.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Debug.Log("Failure");
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Fail";
+                ShowFailMessage();
+                charHolder.text = null;
+            }
         }
-        else
+        else if(sceneIndex == 2)
         {
-            Debug.Log("Failure");
-            charHolder.text = null;
-            charHolder.text = charHolder.text + "Fail";
-            ShowFailMessage();
-            charHolder.text = null;
+            if (charHolder.text == "8207")
+            {
+                Debug.Log("Success");
+                canEnter = true;
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Success";
+                dt.canvas.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Debug.Log("Failure");
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Fail";
+                ShowFailMessage();
+                charHolder.text = null;
+            }
         }
+        else if (sceneIndex == 3)
+        {
+            if (charHolder.text == "4918")
+            {
+                Debug.Log("Success");
+                canEnter = true;
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Success";
+                dt.canvas.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Debug.Log("Failure");
+                charHolder.text = null;
+                charHolder.text = charHolder.text + "Fail";
+                ShowFailMessage();
+                charHolder.text = null;
+            }
+        }
+
     }
 
     private IEnumerator ShowFailMessage()

@@ -117,7 +117,7 @@ public class KeyPad : MonoBehaviour
                 charHolder.text = null;
             }
         }
-        else if(sceneIndex == 2)
+        else if(sceneIndex == 3)
         {
             if (charHolder.text == "8207")
             {
@@ -138,7 +138,7 @@ public class KeyPad : MonoBehaviour
                 charHolder.text = null;
             }
         }
-        else if (sceneIndex == 3)
+        else if (sceneIndex == 2)
         {
             if (charHolder.text == "4918")
             {

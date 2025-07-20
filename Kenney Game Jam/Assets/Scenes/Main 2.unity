@@ -2521,6 +2521,7 @@ MonoBehaviour:
   enterButton: {fileID: 2057514861}
   canEnter: 0
   dt: {fileID: 1807085659}
+  audioManager: {fileID: 1049348697}
 --- !u!1 &480136866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7151,6 +7152,12 @@ MonoBehaviour:
   generator: {fileID: 8300000, guid: 5b05628b4ad11b948b2b9c583ee289d3, type: 3}
   itempickup: {fileID: 8300000, guid: fecfebff3f50ca242b875b397a1458f5, type: 3}
   wire: {fileID: 8300000, guid: 3afd41d584bc56245bcbcc22f65e3c42, type: 3}
+  success: {fileID: 8300000, guid: 1656842ff0db2ee49acf5bec11e4a0c0, type: 3}
+  victoryalt: {fileID: 8300000, guid: 26298d13204b88f4b9f3136d253d826e, type: 3}
+  generatornovi: {fileID: 8300000, guid: 5223f6dce4fbbb34fbabf09faacdd05f, type: 3}
+  enternumber: {fileID: 8300000, guid: b65e3eb7c19cd2c45813b9fab4ba9b74, type: 3}
+  back: {fileID: 8300000, guid: fc95d592f43f6424baff479aa73fcb45, type: 3}
+  victory: {fileID: 8300000, guid: 7980f585033a64f4e88e89621215c1d4, type: 3}
 --- !u!4 &1049348698
 Transform:
   m_ObjectHideFlags: 0
@@ -9971,6 +9978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06503463bb3ac604dafe3124d532d25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 1049348697}
   generator: {fileID: 691787265}
 --- !u!61 &1721087516
 BoxCollider2D:

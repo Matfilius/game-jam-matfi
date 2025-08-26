@@ -21,61 +21,73 @@ public class KeyPad : MonoBehaviour
     public GameObject enterButton;
     public bool canEnter = false;
     public DoorTrigger dt;
+    public AudioManager audioManager;
 
     public void b1()
     {
         charHolder.text = charHolder.text + "1";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b2()
     {
         charHolder.text = charHolder.text + "2";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b3()
     {
         charHolder.text = charHolder.text + "3";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b4()
     {
         charHolder.text = charHolder.text + "4";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b5()
     {
         charHolder.text = charHolder.text + "5";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b6()
     {
         charHolder.text = charHolder.text + "6";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b7()
     {
         charHolder.text = charHolder.text + "7";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b8()
     {
         charHolder.text = charHolder.text + "8";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b9()
     {
         charHolder.text = charHolder.text + "9";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
     public void b0()
     {
         charHolder.text = charHolder.text + "0";
+        audioManager.PlaySFX(audioManager.enternumber);
     }
 
 
     public void clearEvent()
     {
         charHolder.text = null;
+        audioManager.PlaySFX(audioManager.back);
     }
 
     public void enterEvent()
@@ -89,6 +101,7 @@ public class KeyPad : MonoBehaviour
             if (charHolder.text == "5936")
             {
                 Debug.Log("Success");
+                audioManager.PlaySFX(audioManager.success);
                 canEnter = true;
                 charHolder.text = null;
                 charHolder.text = charHolder.text + "Success";
@@ -104,10 +117,11 @@ public class KeyPad : MonoBehaviour
                 charHolder.text = null;
             }
         }
-        else if(sceneIndex == 2)
+        else if(sceneIndex == 3)
         {
             if (charHolder.text == "8207")
             {
+                audioManager.PlaySFX(audioManager.success);
                 Debug.Log("Success");
                 canEnter = true;
                 charHolder.text = null;
@@ -124,10 +138,11 @@ public class KeyPad : MonoBehaviour
                 charHolder.text = null;
             }
         }
-        else if (sceneIndex == 3)
+        else if (sceneIndex == 2)
         {
             if (charHolder.text == "4918")
             {
+                audioManager.PlaySFX(audioManager.success);
                 Debug.Log("Success");
                 canEnter = true;
                 charHolder.text = null;
